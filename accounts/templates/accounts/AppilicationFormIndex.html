@@ -1,0 +1,58 @@
+{% load static %}
+<html>
+<head>
+	<title>Leave Appilication</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/sample.css' %}">
+
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		<div class="bodyarea">
+			<h1> LEAVE APPILICATION </h1>
+			<button class="logout"><a href="{% url 'logout_hod' %}">Logout</a></button>
+		</div>
+		<div class="app">
+			<h2 class="hello">APPLICATIONS</h2>
+			<div class="haha">
+				{% for app in stu_application %}
+					{% if app.flag == 0 %}
+					<button class="button" value="{{ app.application_id }}" name="reg">{{ app.user }}</button>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<div class="app">
+			<h2 class="hello">ACCEPTED APPLICATIONS</h2>
+			<div class="haha">
+				{% for app in stu_application %}
+					{% if app.flag == 1 %}
+					<button class="button" value="{{ app.application_id }}" name="reg1">{{ app.user }}</button>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<div class="app">
+			<h2 class="hello">REJECTED APPLICATIONS</h2>
+			<div class="haha">
+				{% for app in stu_application %}
+					{% if app.flag == 2 %}
+							<button class="button" value="{{ app.application_id }}" name="reg2">{{ app.user }}</button>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+		<div class="app">
+			<h2 class="hello">APPLICATIONS UNDER OBSERVATION</h2>
+			<div class="haha">
+				{% for app in stu_application %}
+					{% if app.flag == 3 %}
+					<button class="button" value="{{ app.application_id }}" name="reg3">{{ app.user }}</button>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</form>
+	<p>{{ flag }}</p>
+</body>
+</html>

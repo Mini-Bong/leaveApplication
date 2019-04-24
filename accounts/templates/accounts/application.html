@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Application</title>
+	<style type="text/css">
+		body {
+			background-color : #E9E7F0;
+		}
+		button{
+			background-color:#33f4ff;
+  			border: none;
+ 			color: white;
+ 		    padding: 15px 32px;
+  			text-align: center;
+  			text-decoration: none;
+  			display: inline-block;
+  			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<form method='POST'>
+		{% csrf_token %}
+	<p>Application date  : {{ student_app.application_date }}</p>
+	<p>Registration No  : {{ student_app.user }}</p>
+	<p>Student applications  : </p>
+	<textarea class="text_area" name="application" rows="20" cols="75">{{ student_app.stu_apps }}</textarea><br><br>
+	<p>Certificate  :</p><br>
+	<img src="{{ student_app.certificate.url }}"><br><br>
+    <button value="Accept" name="app">Accept</button> &nbsp
+    <button value="Reject" name="app">Reject</button> &nbsp
+    <button value="Under observation" name="app">Under observation</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+div{
+	position: absolute;
+	top: 30%;
+	left: 35%;
+	float: center;
+	background-color: #dfecea;
+	color: black;
+	height: 300px;
+	width: 400px;
+	align-content: center;
+}
+
+h2{
+	text-align: center;
+}
+input[type=submit]{
+	
+  padding:3px 10px;
+  display:inline-block;
+  border:1px solid #ccc;
+  border-radius:4px;
+  box-sizing:border-box;
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  color: solid black;
+
+  
+}
+input[type=email]{
+	padding: 6px 60px;
+	display: inline;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}

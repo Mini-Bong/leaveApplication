@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Welcome to student section</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/main.css' %}">
+	<script type="text/javascript">
+		function preventBack(){
+			window.history.forward();
+		}
+		setTimeout("preventBack()", 0);
+		window.onunload = function () { null };
+	</script>
+</head>
+	<body>
+		<ul class="navigation">
+			<li><a href="#">Home</a></li>
+			<li><a href="{% url 'logout' %}">Logout</a></li>
+			<li><a href="#">My applications</a></li>
+			<li><a href="#">Notification</a></li>
+			<li><a href="#">Status</a></li>
+		</ul>
+		<br>
+	<form method="POST">
+		{% csrf_token %}
+		<br>
+		<div class="class1">
+			<h3 style="font-size: 30px">Welcome to: {{ data.stu_name }}</h3>
+			<p>Name: {{ data.stu_name }}</p>
+			<p>Registration Number: {{ data.stu_reg }}</p>
+			<p>Branch: {{ data.stu_branch }}</p>
+			<p style="display: inline;">Date:</p>
+			<input type="Date" name="Date">
+			<p>Write your application:</p>
+		</div>
+		<textarea class="text_area" name="application" placeholder="Write your application here........." rows="20" cols="75"></textarea><br>
+		<h3 style="display: inline;">Upload your certificate:</h3>
+		<input class="btn" type="file" name="myfile"><br><br><br><br>
+	<input class="btn" style="width: 40%; background: #c0d9b1;" type="submit" name="" value="Submit your application">
+</form>
+</body>
+
+

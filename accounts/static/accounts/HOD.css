@@ -1,0 +1,47 @@
+body{
+	margin :0;
+	background-image:url('img.jpg');
+	-webkit-background-size:cover;
+	background-size:cover;
+}
+.form-area{
+	position:absolute;
+	top:20%;
+	left:55%;
+	tranform:translate(-50%,-50%);
+	width:400px;
+	height:500px;
+	box_sizing:border-box;
+	background-color:rgba(0,0,0,0.5);
+	padding:30px;
+}
+.area{
+	position:absolute;
+	top:50%;
+	left:20%;
+	transform:translate(-50%,-50%);
+	width:350px;
+	height:300px;
+	box_sizing:border-box;
+	background-color:rgba(0,0,0,0.5);
+	padding:30px;
+}
+
+h1,h2{
+	color:white;
+	text-align:center;
+}
+.form-area p,.area p{
+	color:white;
+	
+}
+input[type=text],input[type=email],input[type=password],input[type=submit],select{
+  
+  padding:3px 10px;
+  display:inline-block;
+  border:1px solid #ccc;
+  border-radius:4px;
+  box-sizing:border-box;
+  
+  
+}

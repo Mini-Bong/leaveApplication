@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'accounts/nav.css' %}">
+</head>
+<body>
+<h2>Welcome....</h2>
+<div class="navbar">
+  <a href="#home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Register
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'HOD' %}">Register as HOD</a>
+      <a href="{% url 'signup' %}">Register as student</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Login
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'HOD' %}">Login as HOD</a>
+      <a href="{% url 'login' %}">Login as student</a>
+      <p>{{ msg }}</p>
+    </div>
+  </div> 
+</div>
+</body>
+</html>

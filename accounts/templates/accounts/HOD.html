@@ -1,0 +1,75 @@
+{% load static %} 
+<html> 
+<head> 
+	<title>LEAVE APPILICATION</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'accounts/HOD.css' %}"> 
+	<script	type="text/javascript">
+
+		function checkPasswordMatch(){
+			var pass1 = document.getElementById("pass").value;
+			var pass2 = document.getElementById("pass2").value;
+
+			if (pass1 != pass2){
+				alert("Passwords must match");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<div class="form-area">
+		<h1>    Sign Up    </h1>
+		<form method="POST" onsubmit="return checkPasswordMatch()">
+			{% csrf_token %}
+			<p>Email</p>
+			<input type="email" name="email" value="" placeholder="Email" style="width:300px;" required>
+			<br>
+			<p>Password</p>
+			<input type="password" name="Password" id="pass" placeholder="password" value="" required>
+			<p>Re-Enter Password</p>
+			<input type="password" name="Password2" id="pass2" placeholder="password" value="" required>
+			<br>
+			<p>Name</p>
+			<input type="text" name="Name" placeholder="enter your name" value="" required>
+			<p style="display: inline;">HOD of Branch</p>	
+			<tr>
+				<td>
+					<select name="Branch" required>
+						<option value="-1"></option>
+						<option value="CSE">CSE</option>
+						<option value="EEE">EEE</option>
+						<option value="ECE">ECE</option>
+						<option value="Civil">Civil</option>		
+						<option value="Mechanical">Mechanical</option>
+						<option value="EIE">EIE</option>
+					</select>
+				</td>
+			</tr>
+			<br>
+			<p>Mobile No</p>
+			<input type="text" name="mobile_No" pattern="\d*{10}" placeholder="Mobile No." value="" required>
+			<br><br><br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+			<input type="submit" value="REGISTER">
+			<h3 style="color: red">{{ flag }}</h3>
+		</form>
+	</div>
+	<form method="POST">
+		{% csrf_token %}
+		<div class="area">
+			<h2>Login</h2>
+			<p>Email</p>
+			<input type="email" name="Email" value="" placeholder="Email" style="width:300px;">
+			<p>Password</p>
+			<input type="password" placeholder="password" name="password">
+			<br><br>
+			<input type="submit" name="submit" value="LOGIN">
+			<h3 style="color: red">{{ msg }}</h3>
+		</form>
+	</div>
+
+
+
+</body>
+</html>

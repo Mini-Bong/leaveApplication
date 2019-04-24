@@ -1,0 +1,21 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{% static 'accounts/forgot_pwd.css' %}">
+	<title>Forgot Password</title>
+</head>
+<body>
+	<div>
+	<form method='POST'>
+		 {% csrf_token %}
+		<h2>FORGOT PASSWORD</h2>
+		<p>Email</p>
+		<input type="email" placeholder="enter your email" name="mail">
+		<br><br>
+		<input type="submit" value="submit">
+		<p style="color: red">{{ flag }}</p>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+h1{
+  color:#33f4ff;
+  height:20px;
+  padding:30px;
+  text-align:left;
+
+}
+.bodyarea{
+  background-color:rgba(0,0,0,0.5);
+  height:180px;
+}
+.logout{
+  background-color:#33e8ff;
+  font-family:Comic Sans MS;
+  color:white;
+  height:50px;
+  width:100px;
+  font-size:15px;
+  border-style:none;
+  position:absolute;
+  top:18%;
+  left:90%;
+}
+.academic {
+  background-color: #33e8ff;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.AY {
+  position: relative;
+  display: inline-block;
+  float:left;
+}
+
+.year{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.year a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+. a:hover {background-color: #f1f1f1}
+
+.AY:hover .year{
+  display: block;
+}
+
+.AY:hover .academic {
+  background-color: #33e8ff;
+}
+.navbar{
+  overflow:hidden;
+  background-color:#f1f1f1;
+}
+.navbar a{
+  float:left;
+  display:block;
+  text-align:center;
+  color:black;
+  padding:15px 20px;
+  font-size:16px;
+  border-bottom:5px solid #f1f1f1;
+  text-decoration:none;
+  
+}
+.navbar a:hover{
+  border-bottom:5px solid #33f4ff;
+}
+
+.app{
+  position: relative;
+  display: inline-block;
+  float:left;
+}
+.app:hover .haha{
+  display: block;
+}
+
+.aap:hover .hello {
+  padding: 16px;
+  border-bottom:5px solid #33f4ff;
+}
+.haha a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.haha{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.academic {
+  background-color: #33e8ff;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.hello {
+  background-color: #d7d5d5;
+  opacity: 0.8;
+  color: black;
+  padding: 16px;
+  font-size: 17.5px;
+  border: none;
+  cursor: pointer;
+}
+input[type=submit]{
+  padding:3px 10px;
+  display:inline-block;
+  border:1px solid #ccc;
+  border-radius:4px;
+  box-sizing:border-box;
+}
+.button{
+  background-color: #f9f9f9;
+  border: none;
+  color: solid black;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

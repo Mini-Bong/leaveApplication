@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Student-login</title>
+	<link rel="stylesheet" href="{% static 'accounts/login.css' %}">
+	<body>
+		<div class="login-box" style="width:500px;float:right;text-align:left">
+			<form method="POST">
+			  {% csrf_token %}
+			<h1>Login</h1>
+			<div class="textbox">
+				<i class="fa fa-user icon" aria-hidden="true"></i>
+				<input type="text" pattern="\d*" placeholder="Registration no." name="reg" value="" title="Enter your Username" required>
+			</div>
+			<div class="textbox">
+				<i class="fa fa-key icon" aria-hidden="true"></i>
+				<input type="Password" placeholder="Password" name="psw" value="" title="Enter your Password" required>
+			</div>
+			<input class="btn" type="submit" name="" value="Sign in">
+		</form>
+			 <span class="psw"><a href="{% url 'resetpsw' %}">Forgot password?</a></span>
+			 <span class="sign"><a href="{% url 'signup' %}">Don't have a account?</a></span>
+			 <h3 style="color: red">{{ msg }}</h3>
+		</div>
+	</body>
+</head>

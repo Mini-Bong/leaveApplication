@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Student-SignUp</title>
+	<link rel="stylesheet" href="{% static 'accounts/signup.css' %}">
+	<script type="text/javascript">
+		function checkPasswordMatch()
+		{
+			var pass1 = document.getElementById("pass1").value;
+			var pass2 = document.getElementById("pass2").value;
+
+			if(pass1 != pass2)
+			{
+				alert("password didn't match");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+	<body>
+		<div class="SignUp-box" style="width:500px;height:600px;float:right;text-align:left">
+			<form method="POST" onsubmit="return checkPasswordMatch()">
+				{% csrf_token %}
+				<h1 style="color:white">Sing-Up</h1>
+				<div class="textbox">
+					<input type="text" placeholder="Registration Number" pattern="\d*" name="reg" value="" title="Enter your Registration Number" required>
+				</div>
+				<div class="textbox">
+
+					<input type="text" placeholder="Name" name="name" value="" title="Enter your Name" required>
+				</div>
+				<div class="textbox">
+					<tr>
+						<td>Branch</td>
+						<td>
+							<select class="name" name="branch" required>
+								<option value="-1"></option>
+								<option value="CSE">CSE</option>
+								<option value="EEE">EEE</option>
+								<option value="ECE">ECE</option>
+								<option value="CIVIL">CIVIL</option>
+								<option value="MECH">MECH</option>
+								<option value="EIE">EIE</option>
+							</select>
+						</td>
+					</tr>
+				</div>
+				<div class="textbox">
+
+					<input type="text" placeholder="Enter your Gmail" name="mail" value="" title="Enter your Gmail" required>
+				</div>
+				<div class="textbox">
+					<input type="Password" placeholder="Password" name="password" value="" id="pass1" title="Enter your Password" required>
+				</div>
+				<div class="textbox">
+					<input type="Password" placeholder="Re-enter your Password" name="password2" id="pass2" value="" title="Enter your Password" required>
+				</div>
+				<input type="submit" value="Register"  class="btn" >
+			</form> 
+			<span class="Login"><a href="{% url 'login' %}">Already Registered? Login</a></span>
+			<h3 style="color: red">{{ flag }}</h3>
+		</div>
+	</body>
